@@ -1,0 +1,50 @@
+phase{
+	display:none;
+}
+phase:target{
+	display:block;
+}
+.t{
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+body{
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+fieldgroup{
+	/*padding:2em;
+	box-sizing:border-box;
+	position:relative;*/
+}
+div.separator{
+	width:400px;
+}
+input, a.btn, a.btn-flat, select{
+	margin: 0 0 20px 50px !important;
+}
+input[type="text"]{
+	width:90% !important;
+}
+span.box-s{
+	padding:5px;
+	box-shadow:none;
+	transition:all ease .5s;
+}
+span.box-s:hover{
+	box-shadow:inset 0 0 5 #000;
+}
+.bsh:focus {
+    box-shadow: inset 0px -2.5px 0 #fff, inset 0px -2.5px 0 #fff, inset 0 -2.5px 0 #000;
+}
+.bsh {
+    padding: 3px;
+    outline: none;
+    background-color: transparent;
+    /* margin: 4px; */
+    box-shadow: inset -102px 0 0 #f0f, inset 102px 0 0 #f0f, inset 0 -2.5px 0 #000;
+    transition: box-shadow ease .5s;
+    border: none;
+}

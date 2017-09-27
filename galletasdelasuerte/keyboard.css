@@ -1,0 +1,37 @@
+.keyboard{
+    position: fixed;
+    bottom: 24px;
+    width: 50%;
+    height: 9em;
+    box-sizing: border-box;
+    padding: 0px;
+    text-align: center;
+    left: 186px;
+    background: #26C6DA;
+    overflow: auto;
+    box-shadow: 0 0 10px #000;
+}
+.keyboard > #khandle{
+	/*position:fixed;*/
+	bottom:100%;
+	left:0;
+	width:100%;
+	padding:4px;
+	background:#fa1;
+}
+#input1{
+	outline:none;
+	line-height: 11px;
+}
+.btn, .btn-flat{
+	padding:5px;
+}
+.cmenu{
+	display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+    padding: 3px;
+    background: antiquewhite;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+		
+<title>emoji</title>
+<link rel="stylesheet" href="keyboard.css"/>
+<link rel="stylesheet" href="css/materialize.css"/>
+<link rel="stylesheet" href="css/icons.css"/>
+<link rel="stylesheet" href="doc.css"/>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body onload="$('.button-collapse').sideNav();">
+<div class="navbar-fixed">
+    <nav>
+    <div class="nav-wrapper">
+      <a class="brand-logo ball"><!--Predice tu futuro!--></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">&equiv;</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li class="active"><a href="#home">Inicio</a></li>
+        <li class="active"><a href="#share">Comparte</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li class="active"><a href="#home">Inicio</a></li>
+        <li class="active"><a href="#share">Comparte</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<!-- Buton navbar -->
+<div class="fixed-action-btn click-to-toggle " style="">
+	<span class="new badge countnumb" id="galletas-count" data-badge-caption=" " style="z-index:1000;right:10px !important;border-radius: 10px !important;min-width:0px !important;"></span>
+	<a class="btn-large waves-effect btn-large red ballr"></a>
+	<ul>
+		<li><a href="#share" class="btn-floating blue " data-message="Conseguir galletas"><i class="material-icons">add</i></a></li>
+		<li><a href="#predict" class="btn-floating red ball-small-crushed " data-message="Abrir mis galletas"></a></li>
+	</ul>
+</div>
+<!-- /Buton navbar -->
+<div class="phase" id="home">
+
+	<div class="card-panel teal">
+		<span class="white-text">
+			Ahora podras predecir tu futuro<br>
+			aquí
+		</span>
+	</div>
+
+  
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="img/pollo.JPG">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+      <p><a class="btn-flat waves-effect waves-dark">This is a link</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        
+    </div>
+  </div>
+</div>
+<div class="phase" id="share"> 
+	 <div class="col s12 m7">
+	 	<h3 class="header">Consigue Galletas</h3>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="img/whatsapp.png">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Comparte por whatsapp<br>Consigues una galleta</p>
+        </div>
+        <div class="card-action">
+          <a href="whatsapp://send?text=Conseguí un punto para poder predecir mi futuro" class="btn-flat waves-effect share-button" onclick="localStorage.points = parseInt(localStorage.points) + 1;alert('ganaste una galleta')"> comparte</a>
+        </div>
+      </div>
+    </div>
+  </div>
+         
+</div>
+	
+
+<div class="phase" id="predict"> 
+	<button class="btn waves-effect share-button blue" onclick="predict();"> Abrir una galleta</button>
+	<div class="card-panel red">
+		<h5 class="white-text">Resultados de la prediccion</h5>
+		<span class="white-text resultados"></span>
+	</div>
+</div>
+
+<div class="phase" id="misgalletas"> 
+	 <div class="col s12 m7">
+    <h2 class="header">Horizontal Card</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <span style="margin-left:100px;" id="minumerodegalletas">23</span>
+        <img src="img/fortune_cookie.png" width="100" height="100">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+            
+</div>
+
+
+<!--<a class="waves-effect waves-light btn modal-trigger" href="#noSharesModal">Modal</a><button data-target="noSharesModal" class="btn modal-trigger">Modal</button>-->
+<div id="noSharesModal" class="modal">
+    <div class="modal-content">
+      <h4>No tienes galletas!</h4>
+      <p>Comparte con amigos para ganar galletas!<br></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#share" class=" modal-action modal-close waves-effect waves-green btn-flat">A compartir!</a>
+      <a class=" modal-action modal-close waves-effect waves-green btn-flat">Volver</a>
+    </div>
+</div>
+
+<!--<div class="keyboard" break="5" data-insert="input1" id="keyboard"><div id="khandle">kk</div></div>
+-->		<script src="jquery.js"></script>
+		<script src="domdrag.js"></script>
+		<script src="blockdata.js"></script>
+		<script src="keyboard.js"></script>
+		<script src="js/materialize.js"></script>
+		<script src="index.js"></script>
+		<script>if(/#/gi.test(window.location.hash)){} else {window.location.hash="#home";}
+ $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.datepicker').pickadate({
+    selectMonths: false, // Creates a dropdown to control month
+    selectYears: 0 // Creates a dropdown of 15 years to control year
+  });
+  if(localStorage.points){} else {localStorage.points=0;}
+  window.setInterval(function(){
+  	document.getElementById("galletas-count").innerHtml = localStorage.points;
+$(".counternumb").html(" " + localStorage.points + " ");
+},100);
+});
+</script>
+	</body>
+</html>
